@@ -26,7 +26,30 @@ public class LearningSpringApplication {
 		public Iterable<Room> getRooms() {
 			return  this.roomRepository.findAll();
 		}
-
-
 	}
+
+	@RestController
+	@RequestMapping("/guests")
+	public class GuestController {
+		@Autowired
+		private RoomRepository guestRepository;
+
+		@GetMapping
+		public Iterable<Room> getRooms() {
+			return  this.guestRepository.findAll();
+		}
+	}
+
+	@RestController
+	@RequestMapping("/reservations")
+	public class ReservationController {
+		@Autowired
+		private RoomRepository ReservationRepository;
+
+		@GetMapping
+		public Iterable<Room> getRooms() {
+			return  this.ReservationRepository.findAll();
+		}
+	}
+
 }
