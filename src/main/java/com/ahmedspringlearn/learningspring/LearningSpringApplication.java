@@ -26,5 +26,7 @@ public class LearningSpringApplication {
 		public Iterable<Room> getRooms() {
 			return  this.roomRepository.findAll();
 		}
+
+
 	}
 }
